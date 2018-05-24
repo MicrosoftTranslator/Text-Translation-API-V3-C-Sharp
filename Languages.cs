@@ -29,7 +29,7 @@ namespace TranslatorTextQuickStart
 
         static void Main(string[] args)
         {
-            GetLanguages().Wait;
+            GetLanguages();
             Console.ReadLine();
         }
     }
