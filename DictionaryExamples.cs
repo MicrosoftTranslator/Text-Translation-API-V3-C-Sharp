@@ -45,7 +45,7 @@ namespace TranslatorTextQuickStart
 
         static void Main(string[] args)
         {
-            Examples().Wait;
+            Examples();
             Console.ReadLine();
         }
     }
