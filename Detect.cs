@@ -42,7 +42,7 @@ namespace TranslatorTextQuickStart
 
         static void Main(string[] args)
         {
-            Detect().Wait;
+            Detect();
             Console.ReadLine();
         }
     }
