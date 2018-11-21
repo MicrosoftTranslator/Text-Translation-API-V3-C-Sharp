@@ -22,8 +22,11 @@ Here's what you'll need before you use these samples:
 
 This repository includes a sample for each of the methods made available by the Microsoft Translator Text API v3. To use each of the samples, follow these instructions:
 
-* Create a new project in your favorite IDE or editor.
-* Copy the code from one of the samples into your project.
+* Create a new project:
+  ```
+  dotnet new console -o your_project-name
+  ```
+* Copy the code from one of the samples into `Program.cs`.
 * Set your subscription key.
 * Run the program from the project directory: `dotnet run`.
 
