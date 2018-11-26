@@ -1,51 +1,45 @@
 using System;
 using System.Net.Http;
 using System.Text;
-// NOTE: Install the Newtonsoft.Json NuGet package.
 using Newtonsoft.Json;
 
-namespace TranslatorTextQuickStart
+namespace AltTranslation
 {
     class Program
     {
-        static string host = "https://api.cognitive.microsofttranslator.com";
-        static string path = "/dictionary/lookup?api-version=3.0";
-        // Translate from English to French.
-        static string params_ = "&from=en&to=fr";
-
-        static string uri = host + path + params_;
-
-        // NOTE: Replace this example key with a valid subscription key.
-        static string key = "ENTER KEY HERE";
-
-        static string text = "great";
-
-        async static void Lookup()
+        static void AltTranslation()
         {
-            System.Object[] body = new System.Object[] { new { Text = text } };
+            string host = "https://api.cognitive.microsofttranslator.com";
+            string route = "/dictionary/lookup?api-version=3.0&from=en&to=es";
+            string subscriptionKey = "YOUR_SUBSCRIPTION_KEY";
+
+            System.Object[] body = new System.Object[] { new { Text = @"Elephants" } };
             var requestBody = JsonConvert.SerializeObject(body);
 
             using (var client = new HttpClient())
             using (var request = new HttpRequestMessage())
             {
+                // Set the method to POST
                 request.Method = HttpMethod.Post;
-                request.RequestUri = new Uri(uri);
+                // Construct the full URI
+                request.RequestUri = new Uri(host + route);
+                // Add the serialized JSON object to your request
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                request.Headers.Add("Ocp-Apim-Subscription-Key", key);
-
-                var response = await client.SendAsync(request);
-                var responseBody = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.SerializeObject(JsonConvert.DeserializeObject(responseBody), Formatting.Indented);
-
-                Console.OutputEncoding = UnicodeEncoding.UTF8;
-                Console.WriteLine(result);
+                // Add the authorization header
+                request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+                // Send request, get response
+                var response = client.SendAsync(request).Result;
+                var jsonResponse = response.Content.ReadAsStringAsync().Result;
+                // Print the response
+                Console.WriteLine(jsonResponse);
+                Console.WriteLine("Press any key to continue.");
             }
         }
-
         static void Main(string[] args)
         {
-            Lookup();
+            AltTranslation();
             Console.ReadLine();
+
         }
     }
 }
