@@ -60,7 +60,7 @@ namespace BreakSentenceSample
             // Output languages are defined in the route.
             // For a complete list of options, see API reference.
             // https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-break-sentence
-            string subscriptionKey = "ae3194e69b09498ea39245a8e399e6c0";
+            string subscriptionKey = "YOUR_TRANSLATOR_TEXT_KEY_GOES_HERE";
             string host = "https://api.cognitive.microsofttranslator.com";
             string route = "/breaksentence?api-version=3.0";
             string breakSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
