@@ -29,7 +29,7 @@ namespace BreakSentenceSample
         // Async call to the Translator Text API
         static public async Task TransliterateTextRequest(string subscriptionKey, string host, string route, string inputText)
         {
-            System.Object[] body = new System.Object[] { new { Text = inputText } };
+            object[] body = new object[] { new { Text = inputText } };
             var requestBody = JsonConvert.SerializeObject(body);
 
             using (var client = new HttpClient())
