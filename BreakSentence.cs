@@ -27,7 +27,7 @@ namespace BreakSentenceSample
     class Program
     {
         // Async call to the Translator Text API
-        static public async Task TransliterateTextRequest(string subscriptionKey, string host, string route, string inputText)
+        static public async Task BreakSentencetRequest(string subscriptionKey, string host, string route, string inputText)
         {
             object[] body = new object[] { new { Text = inputText } };
             var requestBody = JsonConvert.SerializeObject(body);
@@ -64,7 +64,7 @@ namespace BreakSentenceSample
             string host = "https://api.cognitive.microsofttranslator.com";
             string route = "/breaksentence?api-version=3.0";
             string breakSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
-            await TransliterateTextRequest(subscriptionKey, host, route, breakSentenceText);
+            await BreakSentenceRequest(subscriptionKey, host, route, breakSentenceText);
         }
     }
 }
