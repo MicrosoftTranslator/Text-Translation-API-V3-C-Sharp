@@ -54,7 +54,7 @@ namespace AltTranslation
         static void Main(string[] args)
         {
             AltTranslation();
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
