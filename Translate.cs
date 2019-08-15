@@ -119,7 +119,7 @@ namespace TranslateTextSample
             string textToTranslate = Console.ReadLine();
             await TranslateTextRequest(subscription_key, endpoint, route, textToTranslate);
             Console.WriteLine("Press any key to continue.");
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
