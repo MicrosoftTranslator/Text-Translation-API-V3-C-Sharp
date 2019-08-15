@@ -96,7 +96,7 @@ namespace DetectSample
             string breakSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
             await DetectTextRequest(subscription_key, endpoint, route, breakSentenceText);
             Console.WriteLine("Press any key to continue.");
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
