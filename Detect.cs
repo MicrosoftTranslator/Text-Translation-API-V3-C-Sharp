@@ -30,6 +30,24 @@ namespace DetectSample
 
     class Program
     {
+        private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
+        private static readonly string subscription_key = Environment.GetEnvironmentVariable(key_var);
+
+        private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
+        private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+        static Program()
+        {
+            if (null == subscription_key)
+            {
+                throw new Exception("Please set/export the environment variable: " + key_var);
+            }
+            if (null == endpoint)
+            {
+                throw new Exception("Please set/export the environment variable: " + endpoint_var);
+            }
+        }
+
         // Async call to the Translator Text API
         static public async Task DetectTextRequest(string subscriptionKey, string host, string route, string inputText)
         {
@@ -74,11 +92,11 @@ namespace DetectSample
             // Output languages are defined in the route.
             // For a complete list of options, see API reference.
             // https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect
-            string subscriptionKey = "YOUR_TRANSLATOR_TEXT_KEY_GOES_HERE";
-            string host = "https://api.cognitive.microsofttranslator.com";
             string route = "/detect?api-version=3.0";
             string breakSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
-            await DetectTextRequest(subscriptionKey, host, route, breakSentenceText);
+            await DetectTextRequest(subscription_key, endpoint, route, breakSentenceText);
+            Console.WriteLine("Press any key to continue.");
+            Console.ReadLine();
         }
     }
 }
