@@ -40,8 +40,7 @@ namespace GetLanguages
         static void Main(string[] args)
         {
             GetLanguages();
-            Console.ReadLine();
-
+            Console.ReadKey();
         }
     }
 }
