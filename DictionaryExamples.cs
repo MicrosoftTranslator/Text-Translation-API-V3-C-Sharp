@@ -60,7 +60,7 @@ namespace TranslatorTextQuickStart
         static void Main(string[] args)
         {
             Examples();
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
