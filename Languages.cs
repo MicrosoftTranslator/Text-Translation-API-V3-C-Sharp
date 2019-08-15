@@ -7,9 +7,19 @@ namespace GetLanguages
 {
     class Program
     {
+        private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
+        private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+        static Program()
+        {
+            if (null == endpoint)
+            {
+                throw new Exception("Please set/export the environment variable: " + endpoint_var);
+            }
+        }
+
         static void GetLanguages()
         {
-            string host = "https://api.cognitive.microsofttranslator.com";
             string route = "/languages?api-version=3.0";
 
             using (var client = new HttpClient())
@@ -18,7 +28,7 @@ namespace GetLanguages
                 // Set the method to GET
                 request.Method = HttpMethod.Get;
                 // Construct the full URI
-                request.RequestUri = new Uri(host + route);
+                request.RequestUri = new Uri(endpoint + route);
                 // Send request, get response
                 var response = client.SendAsync(request).Result;
                 var jsonResponse = response.Content.ReadAsStringAsync().Result;
