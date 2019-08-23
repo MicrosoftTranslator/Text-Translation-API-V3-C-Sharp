@@ -94,7 +94,7 @@ namespace DetectSample
             // https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect
             string route = "/detect?api-version=3.0";
             string detectSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
-            await DetectTextRequest(subscription_key, endpoint, route, detectSentenceText);
+            await DetectTextRequest(subscriptionKey, endpoint, route, detectSentenceText);
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
