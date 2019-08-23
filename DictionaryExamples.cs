@@ -26,11 +26,11 @@ namespace TranslatorTextQuickStart
             }
         }
 
-        static string path = "/dictionary/examples?api-version=3.0";
+        static string route = "/dictionary/examples?api-version=3.0";
         // Translate from English to French.
         static string params_ = "&from=en&to=fr";
 
-        static string uri = endpoint + path + params_;
+        static string uri = endpoint + route + params_;
 
         static string text = "great";
         static string translation = "formidable";
