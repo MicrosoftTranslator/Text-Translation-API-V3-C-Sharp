@@ -8,15 +8,29 @@ namespace TranslatorTextQuickStart
 {
     class Program
     {
-        static string host = "https://api.cognitive.microsofttranslator.com";
-        static string path = "/dictionary/examples?api-version=3.0";
+        private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
+        private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
+
+        private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
+        private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
+
+        static Program()
+        {
+            if (null == subscriptionKey)
+            {
+                throw new Exception("Please set/export the environment variable: " + key_var);
+            }
+            if (null == endpoint)
+            {
+                throw new Exception("Please set/export the environment variable: " + endpoint_var);
+            }
+        }
+
+        static string route = "/dictionary/examples?api-version=3.0";
         // Translate from English to French.
         static string params_ = "&from=en&to=fr";
 
-        static string uri = host + path + params_;
-
-        // NOTE: Replace this example key with a valid subscription key.
-        static string key = "ENTER KEY HERE";
+        static string uri = endpoint + route + params_;
 
         static string text = "great";
         static string translation = "formidable";
@@ -32,7 +46,7 @@ namespace TranslatorTextQuickStart
                 request.Method = HttpMethod.Post;
                 request.RequestUri = new Uri(uri);
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                request.Headers.Add("Ocp-Apim-Subscription-Key", key);
+                request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
                 var response = await client.SendAsync(request);
                 var responseBody = await response.Content.ReadAsStringAsync();
@@ -46,7 +60,7 @@ namespace TranslatorTextQuickStart
         static void Main(string[] args)
         {
             Examples();
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }
