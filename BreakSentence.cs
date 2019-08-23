@@ -45,7 +45,7 @@ namespace BreakSentenceSample
         }
 
         // Async call to the Translator Text API
-        static public async Task BreakSentenceRequest(string subscriptionKey, string host, string route, string inputText)
+        static public async Task BreakSentenceRequest(string subscription_key, string host, string route, string inputText)
         {
             object[] body = new object[] { new { Text = inputText } };
             var requestBody = JsonConvert.SerializeObject(body);
@@ -57,7 +57,7 @@ namespace BreakSentenceSample
                 request.Method = HttpMethod.Post;
                 request.RequestUri = new Uri(host + route);
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+                request.Headers.Add("Ocp-Apim-Subscription-Key", subscription_key);
 
                 // Send the request and get response.
                 HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
