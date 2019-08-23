@@ -117,7 +117,7 @@ namespace TranslateTextSample
             // provide a string as textToTranslate.
             Console.Write("Type the phrase you'd like to translate? ");
             string textToTranslate = Console.ReadLine();
-            await TranslateTextRequest(subscription_key, endpoint, route, textToTranslate);
+            await TranslateTextRequest(subscriptionKey, endpoint, route, textToTranslate);
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
