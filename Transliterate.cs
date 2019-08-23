@@ -21,14 +21,14 @@ namespace TransliterateTextSample
     class Program
     {
         private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
-        private static readonly string subscription_key = Environment.GetEnvironmentVariable(key_var);
+        private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
 
         private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
         private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
 
         static Program()
         {
-            if (null == subscription_key)
+            if (null == subscriptionKey)
             {
                 throw new Exception("Please set/export the environment variable: " + key_var);
             }
@@ -39,7 +39,7 @@ namespace TransliterateTextSample
         }
 
         // Async call to the Translator Text API
-        static public async Task TransliterateTextRequest(string subscriptionKey, string host, string route, string inputText)
+        static public async Task TransliterateTextRequest(string subscriptionKey, string endpoint, string route, string inputText)
         {
             object[] body = new object[] { new { Text = inputText } };
             var requestBody = JsonConvert.SerializeObject(body);
@@ -49,7 +49,7 @@ namespace TransliterateTextSample
             {
                 // Build the request.
                 request.Method = HttpMethod.Post;
-                request.RequestUri = new Uri(host + route);
+                request.RequestUri = new Uri(endpoint + route);
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
                 request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
