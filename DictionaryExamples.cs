@@ -9,14 +9,14 @@ namespace TranslatorTextQuickStart
     class Program
     {
         private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
-        private static readonly string subscription_key = Environment.GetEnvironmentVariable(key_var);
+        private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
 
         private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
         private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
 
         static Program()
         {
-            if (null == subscription_key)
+            if (null == subscriptionKey)
             {
                 throw new Exception("Please set/export the environment variable: " + key_var);
             }
@@ -46,7 +46,7 @@ namespace TranslatorTextQuickStart
                 request.Method = HttpMethod.Post;
                 request.RequestUri = new Uri(uri);
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                request.Headers.Add("Ocp-Apim-Subscription-Key", subscription_key);
+                request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
 
                 var response = await client.SendAsync(request);
                 var responseBody = await response.Content.ReadAsStringAsync();
