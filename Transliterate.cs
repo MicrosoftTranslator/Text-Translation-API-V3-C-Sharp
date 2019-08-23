@@ -74,7 +74,7 @@ namespace TransliterateTextSample
             // https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-transliterate
             string route = "/transliterate?api-version=3.0&language=ja&fromScript=jpan&toScript=latn";
             string textToTransliterate = @"こんにちは";
-            await TransliterateTextRequest(subscription_key, endpoint, route, textToTransliterate);
+            await TransliterateTextRequest(subscriptionKey, endpoint, route, textToTransliterate);
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
