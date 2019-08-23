@@ -93,8 +93,8 @@ namespace DetectSample
             // For a complete list of options, see API reference.
             // https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect
             string route = "/detect?api-version=3.0";
-            string breakSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
-            await DetectTextRequest(subscription_key, endpoint, route, breakSentenceText);
+            string detectSentenceText = @"How are you doing today? The weather is pretty pleasant. Have you been to the movies lately?";
+            await DetectTextRequest(subscription_key, endpoint, route, detectSentenceText);
             Console.WriteLine("Press any key to continue.");
             Console.ReadKey();
         }
