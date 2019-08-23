@@ -8,14 +8,14 @@ namespace AltTranslation
     class Program
     {
         private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
-        private static readonly string subscription_key = Environment.GetEnvironmentVariable(key_var);
+        private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
 
         private const string endpoint_var = "TRANSLATOR_TEXT_ENDPOINT";
         private static readonly string endpoint = Environment.GetEnvironmentVariable(endpoint_var);
 
         static Program()
         {
-            if (null == subscription_key)
+            if (null == subscriptionKey)
             {
                 throw new Exception("Please set/export the environment variable: " + key_var);
             }
@@ -42,7 +42,7 @@ namespace AltTranslation
                 // Add the serialized JSON object to your request
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
                 // Add the authorization header
-                request.Headers.Add("Ocp-Apim-Subscription-Key", subscription_key);
+                request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
                 // Send request, get response
                 var response = client.SendAsync(request).Result;
                 var jsonResponse = response.Content.ReadAsStringAsync().Result;
