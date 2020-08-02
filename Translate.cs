@@ -54,6 +54,10 @@ namespace TranslateTextSample
 
     class Program
     {
+
+        private const string region_var = "TRANSLATOR_SERVICE_REGION";
+        private static readonly string region = Environment.GetEnvironmentVariable(region_var);
+
         private const string key_var = "TRANSLATOR_TEXT_SUBSCRIPTION_KEY";
         private static readonly string subscriptionKey = Environment.GetEnvironmentVariable(key_var);
 
@@ -62,6 +66,10 @@ namespace TranslateTextSample
 
         static Program()
         {
+            if (null == region)
+            {
+                throw new Exception("Please set/export the environment variable: " + region_var);
+            }
             if (null == subscriptionKey)
             {
                 throw new Exception("Please set/export the environment variable: " + key_var);
@@ -78,14 +86,15 @@ namespace TranslateTextSample
             object[] body = new object[] { new { Text = inputText } };
             var requestBody = JsonConvert.SerializeObject(body);
 
-            using (var client = new HttpClient())
-            using (var request = new HttpRequestMessage())
+            using(var client = new HttpClient())
+            using(var request = new HttpRequestMessage())
             {
                 // Build the request.
                 request.Method = HttpMethod.Post;
                 request.RequestUri = new Uri(endpoint + route);
                 request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
                 request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+                request.Headers.Add("Ocp-Apim-Subscription-Region", region);
 
                 // Send the request and get response.
                 HttpResponseMessage response = await client.SendAsync(request).ConfigureAwait(false);
