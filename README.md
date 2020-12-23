@@ -1,4 +1,17 @@
-# Translator Text API V3 - .NET Core Samples, C#
+---
+page_type: sample
+name: Microsoft Translator C# samples (v3)
+description: This repository includes C# code samples for Microsoft Translator. 
+urlFragment: translator-c-sharp-v3
+languages:
+- csharp
+products:
+- azure
+- azure-cognitive-services
+- azure-translator
+---
+
+# Translator API V3 - .NET Core Samples, C#
 
 This repository includes .NET Core samples for Microsoft Translator. Each sample corresponds to a **Quickstart** activity on [doc.microsoft.com](https://docs.microsoft.com/azure/cognitive-services/translator/), including:
 
@@ -20,7 +33,7 @@ Here's what you'll need before you use these samples:
 
 ## Code samples
 
-This repository includes a sample for each of the methods made available by the Microsoft Translator Text API v3. To use each of the samples, follow these instructions:
+This repository includes a sample for each of the methods made available by the Microsoft Translator API v3. To use each of the samples, follow these instructions:
 
 * Create a new project: `dotnet new console -o your_project_name`
 * Copy the code from one of the samples into `Program.cs`.
@@ -29,6 +42,6 @@ This repository includes a sample for each of the methods made available by the 
 
 ## Resources
 
-* [What is the Translator Text API?](https://docs.microsoft.com/azure/cognitive-services/translator/translator-info-overview)
-* [v3 Translator Text API Reference](https://docs.microsoft.com/azure/cognitive-services/translator/)
+* [What is Translator?](https://docs.microsoft.com/azure/cognitive-services/translator/translator-info-overview)
+* [v3 Translator API Reference](https://docs.microsoft.com/azure/cognitive-services/translator/)
 * [Supported languages](https://docs.microsoft.com/azure/cognitive-services/translator/language-support)
