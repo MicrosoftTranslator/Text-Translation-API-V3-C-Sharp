@@ -42,6 +42,6 @@ This repository includes a sample for each of the methods made available by the 
 
 ## Resources
 
-* [What is the Translator?](https://docs.microsoft.com/azure/cognitive-services/translator/translator-info-overview)
+* [What is Translator?](https://docs.microsoft.com/azure/cognitive-services/translator/translator-info-overview)
 * [v3 Translator API Reference](https://docs.microsoft.com/azure/cognitive-services/translator/)
 * [Supported languages](https://docs.microsoft.com/azure/cognitive-services/translator/language-support)
