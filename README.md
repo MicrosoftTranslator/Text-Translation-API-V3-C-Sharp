@@ -15,12 +15,14 @@ products:
 
 This repository includes .NET Core samples for Microsoft Translator. Each sample corresponds to a **Quickstart** activity on [doc.microsoft.com](https://docs.microsoft.com/azure/cognitive-services/translator/), including:
 
-* [Translating text](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-csharp-translate)
-* [Transliterating text](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-csharp-transliterate)
-* [Identifying the language of source text](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-csharp-detect)
-* [Getting alternate translations](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-csharp-dictionary)
-* [Getting a complete list of supported languages](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-csharp-languages)
-* [Determining sentence length](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-csharp-sentences)
+* Translating text
+* Transliterating text
+* Identifying the language of source text
+* Getting alternate translations
+* Getting a complete list of supported languages
+* Determining sentence length
+
+[Get started with the Translator quickstart](https://docs.microsoft.com/azure/cognitive-services/translator/quickstart-translator).
 
 ## Prerequisites
 
@@ -29,7 +31,8 @@ Here's what you'll need before you use these samples:
 * [.NET SDK](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
 * [Json.NET NuGet Package](https://www.nuget.org/packages/Newtonsoft.Json/)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download), or your favorite text editor
-* An Azure subscription key for the Speech Service
+* An Azure subscription - [Sign-up for a free account](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup)!
+* A Translator resource - [Create a Translator resource](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation)
 
 ## Code samples
 
