@@ -28,7 +28,7 @@ This repository includes .NET Core samples for Microsoft Translator. Each sample
 
 Here's what you'll need before you use these samples:
 
-* [.NET SDK](https://dotnet.microsoft.com/download)
+* [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download)
 * [Json.NET NuGet Package](https://www.nuget.org/packages/Newtonsoft.Json/)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download), or your favorite text editor
 * An Azure subscription - [Sign-up for a free account](https://docs.microsoft.com/azure/cognitive-services/translator/translator-text-how-to-signup)!
